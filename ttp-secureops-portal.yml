@@ -1,0 +1,35 @@
+- name: 'HACKTIFY: Setup SecureOps Portal Lab'
+  id: 59778a0b-d82f-c747-f34f-079930e7b131
+  description: >-
+    An internal enterprise security operations portal is running on port
+    8088. The platform provides account recovery, service diagnostics, and
+    internal database tools. The application does not explicitly reveal its
+    vulnerabilities — you must perform reconnaissance, analyse application
+    logic, and chain multiple weaknesses together. Your objective is to gain
+    privileged account access, reach internal services that are not directly
+    exposed, and extract sensitive backend data.
+  tactic: initial-access
+  technique_id: T1190
+  technique_name: 'Exploit Public-Facing Application'
+  singleton: true
+  repeatable: false
+  delete_payload: false
+  executors:
+    - name: sh
+      platform: linux
+      command: |
+        git clone https://github.com/hacktifytechnologies/secureops-portal /opt/hacktify/secureops-portal
+        cd /opt/hacktify/secureops-portal
+        chmod +x setup.sh
+        bash setup.sh -a
+      code: null
+      language: null
+      build_target: null
+      payloads: []
+      uploads: []
+      timeout: 300
+      parsers: []
+      cleanup: []
+      variations: []
+      additional_info: {}
+  requirements: []
