@@ -1,6 +1,6 @@
 services:
   secureops-portal:
-    image: hacktify/secureops-portal:1.0
+    image: hacktifytechnologies/secureops-portal:1.0
     container_name: secureops-portal
     ports:
       - "8088:8088"
