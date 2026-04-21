@@ -1,6 +1,5 @@
 services:
   secureops-portal:
-    build: .
     image: hacktify/secureops-portal:1.0
     container_name: secureops-portal
     ports:
